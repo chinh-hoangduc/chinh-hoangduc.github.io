@@ -25,31 +25,31 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--serif);
-  font-size: 19px;
+  font-size: 21px;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
 main {
-  max-width: 760px;
+  max-width: 920px;
   margin: 0 auto;
-  padding: 5rem 1.5rem 4rem;
+  padding: 4rem 1.25rem 3.5rem;
 }
 
 /* ---------- HEADER ---------- */
 
 .header {
   display: grid;
-  grid-template-columns: 160px 1fr;
-  gap: 2rem;
+  grid-template-columns: 192px 1fr;
+  gap: 2.2rem;
   align-items: center;
   margin-bottom: 3rem;
 }
 
 .photo {
-  width: 160px;
-  height: 160px;
+  width: 192px;
+  height: 192px;
   object-fit: cover;
   border-radius: 6px;
   border: 1px solid var(--rule);
@@ -76,7 +76,26 @@ main {
   font-family: var(--sans);
   font-size: 1rem;
   color: var(--muted);
-  margin: 0 0 0.9rem;
+  margin: 0 0 0.75rem;
+}
+
+.emails {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin: 0 0 0.5rem;
+}
+
+.emails a {
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--accent-soft);
+  transition: color 120ms ease, border-color 120ms ease;
+}
+
+.emails a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
 }
 
 .links {
@@ -338,9 +357,9 @@ footer .updated {
 /* ---------- MOBILE ---------- */
 
 @media (max-width: 600px) {
-  body { font-size: 17px; }
+  body { font-size: 19px; }
 
-  main { padding: 2.5rem 1.2rem 3rem; }
+  main { padding: 2.5rem 1.1rem 3rem; }
 
   .header {
     grid-template-columns: 1fr;
@@ -349,12 +368,18 @@ footer .updated {
   }
 
   .photo {
-    width: 130px;
-    height: 130px;
+    width: 160px;
+    height: 160px;
     margin: 0 auto;
   }
 
-  .header-text h1 { font-size: 1.7rem; }
+  .header-text h1 { font-size: 1.85rem; }
+
+  .emails {
+    /* email strings can be long on phones — let them shrink gracefully */
+    word-break: break-all;
+    font-size: 0.9rem;
+  }
 
   ul.awards li {
     grid-template-columns: 3.5rem 1fr;
